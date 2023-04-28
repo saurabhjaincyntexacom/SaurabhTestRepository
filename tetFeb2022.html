@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel And Canvas</title>
+    <style>
+        /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+  
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 20%; /* Could be more or less, depending on screen size */
+    }
+  
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+  
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div style="border: 1px solid black;width: 150px;height: 150px;padding: 1%;margin-top:100px;margin-left: 50px;">
+            <div style="margin-top: 5px;">
+                <button style="background-color: white;border: 1px solid black;width: 150px;" value="Circle" onclick="openModalFunction(event)">Add Circle</button>
+            </div>
+            <div style="margin-top: 5px;">
+                <button style="background-color: white;border: 1px solid black;width: 150px;" value="Rectangle" onclick="openModalFunction(event)">Add Rectangle</button>
+            </div>
+            <div style="margin-top: 5px;">
+                <button style="background-color: white;border: 1px solid black;width: 150px;" value="Arrow" onclick="openModalFunction(event)">Add Arrow</button>
+            </div>
+            <div style="margin-top: 5px;">
+                <button style="background-color: white;border: 1px solid black;width: 150px;" value="Hexagon" onclick="openModalFunction(event)">Add Hexagon</button>
+            </div>
+            <div style="margin-top: 5px;">
+                <button style="background-color: white;border: 1px solid black;width: 150px;" value="Star" onclick="openModalFunction(event)">Add Star</button>
+            </div>
+            <div style="margin-top: 5px;">
+                <button style="background-color: white;border: 1px solid black;width: 150px;" value="Square" onclick="openModalFunction(event)">Add Square</button>
+            </div>
+        </div>
+        <div style="border: 1px solid black;width: 1150px;height: 750px;padding: 1%;margin-top:-181px;margin-left: 250px;" id="element">
+            
+        </div>
+        
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" onclick="closeModalFunction()">&times;</span>
+                <div style="margin-top: 30px;">
+                    <div>
+                        <label for="input">color(Hex)</label><br>
+                        <input type="text" id="colorField">
+                    </div><br>
+                    <div>
+                        <label for="input">Text</label><br>
+                        <input type="text" id="textField">
+                    </div>
+                    <div style="margin-top: 20px;margin-left: 200px;">
+                        <button style="background-color: white;border: 1px solid black;width: 100px;" onclick="insertFunction()">Insert</button>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+</body>
+<script src="tetFeb2022.js"></script>
+</html>

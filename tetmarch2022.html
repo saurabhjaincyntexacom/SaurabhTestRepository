@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <div>
+        <div style="width: 100%;height: 300px;background-color:rgb(30, 174, 231)">
+            <div style="text-align: center;padding-top:50px">
+                <p style="color:white;font-size: 40px;">Explore what the world</p>
+            </div>
+            <div style="text-align: center;margin-top: -38px;">
+                <p style="color:white;font-size: 40px;">is searching</p>
+            </div>
+            <div style="text-align: center;">
+                <input type="text" placeholder="Enter a search term or a topic" name="search" style="width: 500px;" id="textField">
+                <button type="submit" style="margin-left: -5px;" onclick="searchFunction()"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="id">
+                <canvas id="myChart" style="width:100%;max-width:600px;margin-top: 85px;"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="tetmarch2022.js"></script>
+</html>

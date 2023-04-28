@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <style>
+        .save{
+            color:black;
+            background-color: #A9DFBF;
+            font-size: 18px;
+        }
+        .save:active{
+            background-color: #196F3D;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div style="border: 10px solid black;height: 500px;background-color: #E5E7E9;display: block;" id="infoPage">
+            <div style="position: relative;text-align: center;">
+                <h1>Configuration</h1>
+            </div>
+            <div style="position: relative;text-align: center;margin-top:100px;">
+                <label for="input" style="font-size: 24px;"><b>Row And Column Size -</b></label>
+                <input type="number" style="margin-left: 60px;height: 25px;width: 400px;" id="sizeField">
+            </div><br>
+            <div style="position: relative;text-align: center;">
+                <label for="input" style="font-size: 24px;"><b>Time Out Limit -</b></label>
+                <input type="number" style="margin-left: 130px;height: 25px;width: 400px;" id="timeField" placeholder="In minutes...">
+            </div><br>
+            <div style="position: relative;text-align: center;">
+                <label for="input" style="font-size: 24px;"><b>Moves Limit -</b></label>
+                <input type="number" style="margin-left: 160px;height: 25px;width: 400px;" id="movesField">
+            </div>
+            <div style="margin-top: 100px;position: relative;text-align: right;">
+                <button style="height: 40px;width: 100px;border:4px solid black;margin-right: 100px;" class="save" onclick="saveFunction()">Save</button>
+            </div>
+        </div>
+    </div>
+    <div style="border: 10px solid black;height: 500px;background-color: white;display: none;" id="puzzlePage">
+        <div style="display: flex;justify-content:center;align-items: center;margin-top: 50px;">
+            <table id="table" style="border: 1px solid black;height: 300px;width: 300px;background-color:black;">
+
+            </table>
+        </div>
+        <div style="text-align: center;">
+            <div style="margin-top: 10px;margin-right: 102px;">
+                <button style="height: 40px;width: 100px;border:4px solid black;margin-right: 100px;background-color: #E5E7E9;" onclick="shuffleFunction()">shuffle</button>
+            </div>
+            <div style="margin-top: 10px;margin-right: 102px;">
+                <button style="height: 40px;width: 100px;border:4px solid black;margin-right: 100px;background-color: #E5E7E9;" onclick="solveFunction()">Solve</button>
+            </div>
+        </div>
+        <div>
+            <div style="margin-left: 750px;margin-top: -95px;">
+                <p style="font-size: 20px;">Timer - <span style="font-size: 20px;" id="timeLeft"></span></p>
+            </div>
+            <div style="margin-left: 750px;">
+                <p style="font-size: 20px;">Moves lefts - <span style="font-size: 20px;" id="movesLeft"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="tetOctober2022.js"></script>
+</html>

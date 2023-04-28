@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <style>
+        /* The Modal (background) */
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+  
+        /* Modal Content/Box */
+        .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+         
+
+        /* The Modal (background) */
+        .modal1 {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+      
+            /* Modal Content/Box */
+            .modal-content1 {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            }
+  
+        /* The Close Button */
+        .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+  
+        .close:hover,
+        .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    } 
+    </style>
+</head>
+<body>
+    <div style="margin-left: 650px;">
+        <h1>Calendar</h1>
+    </div>
+    <div style="margin-left: 50px;margin-top: 20px;border: 1px solid black;width: 200px;height: 150px;padding: 20px;">
+        <div>
+            <label for="input">Enter Starting Day of the week</label><br>
+            <!-- <input type="text" id="startingDayField"> -->
+            <select name="DaysOfWeek" id="DaysOfWeek">
+                <option value="None">--Please choose an option--</option>
+                <option value="1">Sunday</option>
+                <option value="2">Monday</option>
+                <option value="3">Tuesday</option>
+                <option value="4">Wednesday</option>
+                <option value="5">Thursday</option>
+                <option value="6">Friday</option>
+                <option value="7">Saturday</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="input">Enter Number Of Days</label><br>
+            <input type="number" id="numberOfDaysField">
+        </div>
+        <br>
+        <div style="margin-left: 150px;margin-top: 15px;">
+            <button onclick="submitFunction()">Submit</button>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px;margin-left: 200px;">
+        <table id="table" border="1">
+            <thead>
+                <tr>
+                    <th style="width: 100px;">Sun</th>
+                    <th style="width: 100px;">Mon</th>
+                    <th style="width: 100px;">Tue</th>
+                    <th style="width: 100px;">Wed</th>
+                    <th style="width: 100px;">Thu</th>
+                    <th style="width: 100px;">Fri</th>
+                    <th style="width: 100px;">sat</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModalFunction()">&times;</span>
+            <div>
+                <label for="input">Name</label><br>
+                <input type="text" id="taskNameField">
+            </div><br>
+            <div>
+                <label for="input">Description</label><br>
+                <input type="text" id="taskDescriptionField">
+            </div><br>
+            <div>
+                <label for="select">Priority</label><br>
+                <select name="select" id="taskSelectField">
+                    <option value="None">None</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div><br><br>
+            <div>
+                <button onclick="submitFromModal()">Submit</button>
+            </div>
+        </div>
+      
+    </div>
+
+
+    <div id="myModal1" class="modal1">
+
+        <!-- Modal content -->
+        <div class="modal-content1" id="hoverContent">
+            
+        </div>
+      
+    </div>
+</body>
+<script src="Calendar.js"></script>
+</html>

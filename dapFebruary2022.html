@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 80%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+  
+        /* Modal Content */
+        .modal-content {
+            background-color: #000000;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #000000;
+            width: 20%;
+            border-radius: 20px;
+        }
+  
+        /* The Close Button */
+        .close {
+            color: #ffffff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+  
+        .close:hover,
+        .close:focus {
+            color: #767575;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* The Modal (background) */
+        .modal1 {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+  
+        /* Modal Content */
+        .modal-content1 {
+            background-color: #000000;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #000000;
+            width: 20%;
+            border-radius: 20px;
+        }
+  
+        /* The Close Button */
+        .close1 {
+            color: #ffffff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+  
+        .close1:hover,
+        .close1:focus {
+            color: #767575;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-top: 100px;margin-left:20%;">
+        <div style="border: 1px solid black;height: 200px;background-color:black;width:65%;margin-top: 1%;">
+            <div>
+                <div style="margin-left: 100px;">
+                    <p style="color: #dddddd;font-size: 22px;">Invested</p>
+                    <p style="color: #dddddd;font-size: 24px;margin-top: -19px;" id="investedAmount"></p>
+                </div>
+                <div style="margin-left: 300px;margin-top: -78px">
+                    <p style="color: #dddddd;font-size: 22px;">Current</p>
+                    <p style="color: #dddddd;font-size: 24px;margin-top: -19px;" id="currentAmount">200</p>
+                </div>
+                <hr style="width: 60%;margin-left:50px;margin-top: 30px">
+                <div>
+                    <p style="color: #dddddd;font-size: 22px;margin-left: 100px;">P&L</p>
+                    <p style="color: #dddddd;font-size: 22px;margin-left: 100px;margin-left: 300px;margin-top: -48px;" id="p&l">+30</p>
+                </div>
+            </div>
+            <div style="text-align:right;margin-top: -140px;margin-right: 20px;">
+                <button style="background-color: #05B34E;color:white;height: 45px;width: 130px;border-radius: 4px;font-size: 20px;" onclick="buyStockFunction()">Buy Stock</button>
+            </div>
+            <div style="text-align:right;margin-top: 40px;margin-right: 20px;">
+                <button style="background-color: #05B34E;color:white;height: 45px;width: 130px;border-radius: 4px;font-size: 20px;" onclick="fileUploadFunction()">Upload</button>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 12%;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Invested Amount</th>
+                    <th>Quantity</th>
+                    <th>Avg Price</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+
+            </tbody>
+            
+            
+            
+        </table>
+    </div>
+    <div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" onclick="modalCloseFunction()">&times;</span>
+                <div style="margin-top: 12%;">
+                    <label for="select"><p style="color: #ffffff;font-size: 18px;">Stock:</p></label>
+                    <select name="" id="stockList" style="background-color: #ffffff;width: 100%;padding: 6px;font-size: 14px;">
+                        <option value="Select Stock" style="color: #000000;">Select Stock</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="input"><p style="color: #ffffff;font-size: 18px;">Quantity:</p></label>
+                    <input type="number" name="" id="stockQuantity" placeholder="Enter Quantity" style="width: 94%;padding: 6px;font-size: 14px;">
+                </div>
+                <div style="margin-top: 10%;text-align: center;">
+                    <button style="background-color: #05B34E;color:white;height: 35px;width: 100px;border-radius: 4px;font-size: 20px;" onclick="stockBuySubmitFunction()">Submit</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myModal1" class="modal1">
+
+            <!-- Modal content -->
+            <div class="modal-content1">
+                <span class="close1" onclick="modalCloseFunction1()">&times;</span>
+                <div style="margin-top: 20%;margin-left:30%;">
+                    <input type="file" name="" id="" style="color: #ffffff;" onchange="file(event)">
+                </div>
+                <div style="margin-top: 30%;text-align: center;">
+                    <button style="background-color: #05B34E;color:white;height: 35px;width: 100px;border-radius: 4px;font-size: 20px;" onclick="uploadFileSubmitFunction()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="dapFebruary2022.js"></script>
+</html>

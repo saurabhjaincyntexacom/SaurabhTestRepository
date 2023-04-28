@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral Company</title>
+    <style>
+        /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 20%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+  .modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content1 {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 20%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close1:hover,
+  .close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    </style>
+</head>
+<body>
+    <div>
+        <div style="line-height:5%;margin-left: 100px;margin-top: 100px;">
+            <h2 style="color: skyblue;"><b>Time</b></h2>
+            <h4 id="time"></h4>
+        </div>
+        <div style="margin-left: 70px;margin-top: 50px;">
+            <button style="color: purple;background-color: white;width: 115px;height: 28px;border: 1px solid black;border-radius: 12px" onclick="addTaskFunction()">Add Task</button>
+        </div>
+        <div style="margin-left: 500px;margin-top: -100px;" id="list">
+            
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="modalCloseFunction()">&times;</span>
+            <br><br>
+            <div>
+                <label for="input"><b>Time</b></label><br>
+                <input type="time" id="timeField" style="height: 25px;width: 120px;">
+            </div><br>
+            <div style="margin-left: 135px;margin-top: -65px;">
+                <label for="select"><b>Priority</b></label><br>
+                <select id="priorityField" style="width: 143px;height: 28px;">
+                    <option value="None">None</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div><br>
+            <div>
+                <label for="input"><b>Title</b></label><br>
+                <input type="text" style="width: 272px;height: 25px;" id="titleField">
+            </div><br>
+            <div>
+                <label for="input"><b>Description</b></label><br>
+                <textarea id="descriptionField" cols="35" rows="5"></textarea>
+            </div><br><br>
+            <div>
+                <button style="background-color: green;border:1px solid green;width: 50px;height: 27px;border-radius: 10px;" onclick="addFunction()">Add</button>
+                <button style="background-color: red;border:1px solid red;width: 67px;height: 27px;border-radius: 10px;" onclick="modalCloseFunction()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal1" class="modal1">
+
+        <!-- Modal content -->
+        <div class="modal-content1">
+            <span class="close1" onclick="modalCloseFunction1()">&times;</span>
+            <br><br>
+            
+        </div>
+    </div>
+    
+</body>
+<script src="spiralcompany.js"></script>
+</html>
